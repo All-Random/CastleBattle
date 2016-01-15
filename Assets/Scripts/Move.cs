@@ -6,12 +6,13 @@ public class Move : MonoBehaviour {
 	public float initialSpeed = 1;
 
 
-	private bool isMoving = true;
+	private bool isMoving;
 	private float speed;
 
 	// Use this for initialization
 	void Start () {
 		speed = initialSpeed;
+		isMoving = true;
 	}
 
 	// Update is called once per frame
