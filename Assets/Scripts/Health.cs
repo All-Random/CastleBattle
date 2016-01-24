@@ -4,42 +4,40 @@ using System.Collections;
 public class Health : MonoBehaviour {
 	
 	public float healthPoints = 1f;
-
-	public bool isAlive = true;	
-
-	public GameObject explosionPrefab;
 	
+	private bool alive = true;	
 
-	// Use this for initialization
-	void Start () 
+	public void Start () 
 	{
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		if (healthPoints <= 0) {				// if the object is 'dead'
-			isAlive = false;
-		}
-	}
 
-	void LateUpdate()
+	private void CheckIfAlive () 
 	{
-		if (!isAlive) {
-			if (explosionPrefab!=null) {
-				Instantiate (explosionPrefab, transform.position, Quaternion.identity);
-			}
-			Destroy (gameObject);
+		if (healthPoints <= 0) {
+			alive = false;
 		}
 	}
 	
 	public void ApplyDamage(float amount)
 	{	
-		healthPoints = healthPoints - amount;	
+		ModifyHealth (amount * -1);
 	}
 	
 	public void ApplyHeal(float amount)
 	{
-		healthPoints = healthPoints + amount;
+		ModifyHealth (amount);
+	}
+
+	private void ModifyHealth(float amount)
+	{
+		if (alive) {
+			healthPoints = healthPoints + amount;
+			CheckIfAlive ();
+		}
+	}
+
+	public bool IsAlive()
+	{
+		return alive;
 	}
 }
