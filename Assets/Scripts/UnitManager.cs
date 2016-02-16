@@ -19,11 +19,13 @@ public class UnitManager : MonoBehaviour {
 	void Update () {
 		float deltaTime = Time.deltaTime;
 
-		if (AcquireTarget ()) {
-			damage.Fire (target);
-		} else {
-			move.DoMove (deltaTime);
-		} 
+		if (target == null) {
+			if (AcquireTarget ()) {
+				damage.Fire (target);
+			} else {
+				move.DoMove (deltaTime);
+			} 
+		}
 	}
 
 	void LateUpdate()
