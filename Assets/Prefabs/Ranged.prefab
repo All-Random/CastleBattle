@@ -9,12 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 442774}
   - 114: {fileID: 11488702}
-  - 50: {fileID: 5059906}
   - 61: {fileID: 6171150}
   - 212: {fileID: 21266552}
-  - 114: {fileID: 11481184}
   - 114: {fileID: 11445970}
   - 114: {fileID: 11473508}
+  - 50: {fileID: 5092604}
+  - 114: {fileID: 11441220}
   m_Layer: 8
   m_Name: Ranged
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5059906
+--- !u!50 &5092604
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -65,6 +65,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25}
+--- !u!114 &11441220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b0410739d0ab64ca74f1bcfeb16e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+  range: 3
+  timeBetweenHits: 2
 --- !u!114 &11445970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3043a309c4c1f439534aac82f8fd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 10
+  healthPoints: 100
 --- !u!114 &11473508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,20 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: 1
---- !u!114 &11481184
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b1965ad6c053641abd039dcf6aa931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  range: 2
-  timeBetweenHits: 1.5
 --- !u!114 &11488702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +158,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeBetweenHits
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: healthPoints
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
