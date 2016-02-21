@@ -116,6 +116,7 @@ MonoBehaviour:
   bow: {fileID: 164138, guid: 9f31c0099fde43b4883bf95d8bcfd1d1, type: 2}
   body: {fileID: 114848, guid: 955ead82256f72c4caf9c57fdaefa068, type: 2}
   baseEntity: {fileID: 181540, guid: afdf2f0b6d0344a419f4071251462b4c, type: 2}
+  teamDirection: 0
 --- !u!4 &77342916
 Transform:
   m_ObjectHideFlags: 0

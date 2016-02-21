@@ -7,10 +7,6 @@ public class Health : MonoBehaviour {
 	
 	private bool alive = true;	
 
-	public void Start () 
-	{
-	}
-
 	private void CheckIfAlive () 
 	{
 		if (healthPoints <= 0) {
@@ -18,9 +14,10 @@ public class Health : MonoBehaviour {
 		}
 	}
 	
-	public void ApplyDamage(float amount)
+	public bool ApplyDamage(float amount)
 	{	
 		ModifyHealth (amount * -1);
+		return IsAlive ();
 	}
 	
 	public void ApplyHeal(float amount)
