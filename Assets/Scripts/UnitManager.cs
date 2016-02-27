@@ -1,24 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UnitManager : MonoBehaviour {
 
-	private Weapon weapon;
-	private Health health;
+	public Weapon weapon { get; private set;}
+	public Health health { get; private set;}
 	private Move move;
 
 	private GameObject currentTarget;
+
+	public int unitCount { get; private set;}
+
+	private float unionRange = 0.5f;
+	private bool alreadyJoined = false;
+	private int teamDirection;
 
 	// Use this for initialization
 	void Start () {
 		weapon = gameObject.GetComponent<Weapon> ();
 		health = gameObject.GetComponent<Health> ();
 		move = gameObject.GetComponent<Move> ();
+		move.initialSpeed *= (float)teamDirection;
+		weapon.SetRange(weapon.GetRange() * (float)teamDirection);
+		unionRange *= (float)teamDirection;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float deltaTime = Time.deltaTime;
+
+		CheckRayCastForHits (Physics2D.RaycastAll (transform.position, Vector2.right, unionRange));
 
 		if (currentTarget == null) {
 			if (SelectTarget ()) {
@@ -31,7 +43,7 @@ public class UnitManager : MonoBehaviour {
 
 	void LateUpdate()
 	{
-		if (!health.IsAlive ()) {
+		if (!health.IsAlive () || alreadyJoined) {
 			Destroy (gameObject);
 		}
 	}
@@ -57,5 +69,36 @@ public class UnitManager : MonoBehaviour {
 		} else {
 			Debug.LogError ("No health script, can't apply damage");
 		}
+	}
+
+	private void CheckRayCastForHits(RaycastHit2D[] raycastHits) 
+	{
+		foreach (RaycastHit2D raycastHit in raycastHits) {
+			Collider2D collision = raycastHit.collider;
+			if (collision.isTrigger || collision.gameObject.layer != 8 || transform.GetInstanceID() == collision.transform.GetInstanceID()) // if is not a unit ignore it
+				continue;
+
+			if (transform.tag == collision.transform.tag && transform.name == collision.transform.name) {// if the player is of the same team ignore it
+				collision.gameObject.GetComponent<UnitManager> ().Join (gameObject);
+				alreadyJoined = true;
+				break;
+			}
+
+			//targets.Add (collision.gameObject);
+		}
+	}
+		
+	public void Join(GameObject unit) {
+		UnitManager unitManager = unit.GetComponent<UnitManager> ();
+		health.maxHealthPoints = unitManager.health.maxHealthPoints;
+		ArrayList unitsActualHealthPoints = (ArrayList)unitManager.health.unitsActualHealthPoints.Clone();
+		foreach (float unitActualHealthPoints in unitsActualHealthPoints) {
+			health.RegisterUnitActualHealth (unitActualHealthPoints);
+		}
+		Debug.Log ("Unit toggether: " + health.unitsActualHealthPoints.Count);
+	}
+
+	public void SetTeamDirection(int teamDirection) {
+		this.teamDirection = teamDirection;
 	}
 }

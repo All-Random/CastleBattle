@@ -37,7 +37,6 @@ public class RayCastWeapon : MonoBehaviour, Weapon
 	void FixedUpdate ()
 	{
 		if (targets.Count == 0) {
-			CheckRayCastForHits (Physics2D.RaycastAll (transform.position, Vector2.left, range));
 			CheckRayCastForHits (Physics2D.RaycastAll (transform.position, Vector2.right, range));
 		}
 	}
@@ -54,6 +53,16 @@ public class RayCastWeapon : MonoBehaviour, Weapon
 
 			targets.Add (collision.gameObject);
 		}
+	}
+
+	public float GetRange ()
+	{
+		return range;
+	}
+
+	public void SetRange (float range)
+	{
+		this.range = range;
 	}
 }
 

@@ -13,8 +13,8 @@ public class SpawnManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//gameObject.AddComponent (System.Type.GetType(weaponImplName));
-		InvokeRepeating ("SpawnMele", 0, 0.2f);
-		InvokeRepeating ("SpawnRanged", 0, 0.3f);
+		InvokeRepeating ("SpawnMele", 0, 1.2f);
+		InvokeRepeating ("SpawnRanged", 0, 1.3f);
 	}
 
 	void SpawnRanged() 
@@ -30,9 +30,14 @@ public class SpawnManager : MonoBehaviour {
 	private void SpawnUnit(GameObject unitPrefab)
 	{
 		GameObject newUnit = Instantiate (unitPrefab);
-		newUnit.GetComponent<Move> ().initialSpeed *= (float)teamDirection;
+		newUnit.GetComponent<UnitManager> ().SetTeamDirection ((int)teamDirection);
 		newUnit.tag = gameObject.tag;
 		newUnit.transform.position = transform.position;
+		TeamColored (newUnit);
+	}
+
+	void TeamColored(GameObject unit) {
+		if(teamDirection == TeamDirection.Left) unit.GetComponent<SpriteRenderer> ().color = Color.red;
 	}
 }
 

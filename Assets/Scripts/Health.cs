@@ -1,23 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class Health : MonoBehaviour {
 	
-	public float healthPoints = 1f;
-	
-	private bool alive = true;	
+	public float maxHealthPoints = 1f;
+
+	public ArrayList unitsActualHealthPoints { get; private set; }
+
+	private bool alive = true;
+
+	public void Start () {
+		unitsActualHealthPoints = new ArrayList();
+		if (alive) {
+			unitsActualHealthPoints.Add(maxHealthPoints);
+		}
+	}
 
 	private void CheckIfAlive () 
 	{
-		if (healthPoints <= 0) {
-			alive = false;
-		}
+		var query = from float a in unitsActualHealthPoints
+		            where a > 0
+		            select a;
+
+		unitsActualHealthPoints = new ArrayList(query.ToList ());
+		alive = unitsActualHealthPoints.Count > 0;
 	}
 	
-	public bool ApplyDamage(float amount)
+	public void ApplyDamage(float amount)
 	{	
 		ModifyHealth (amount * -1);
-		return IsAlive ();
 	}
 	
 	public void ApplyHeal(float amount)
@@ -28,7 +40,7 @@ public class Health : MonoBehaviour {
 	private void ModifyHealth(float amount)
 	{
 		if (alive) {
-			healthPoints = healthPoints + amount;
+			unitsActualHealthPoints[0] = Mathf.Max(Mathf.Min( (float)unitsActualHealthPoints[0] + amount, maxHealthPoints),0);
 			CheckIfAlive ();
 		}
 	}
@@ -36,5 +48,9 @@ public class Health : MonoBehaviour {
 	public bool IsAlive()
 	{
 		return alive;
+	}
+
+	public void RegisterUnitActualHealth(float unitActualHealth) {
+		unitsActualHealthPoints.Add (unitActualHealth);
 	}
 }

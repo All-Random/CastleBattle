@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3043a309c4c1f439534aac82f8fd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
+  maxHealthPoints: 10
 --- !u!114 &11473508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,6 +178,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: healthPoints
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Name
+      value: Ranged
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealthPoints
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
