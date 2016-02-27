@@ -7,4 +7,6 @@ public interface Weapon
 	ArrayList GetTargetsInRange();
 	float GetRange ();
 	void SetRange(float range);
+	float GetDamage ();
+	void SetDamage(float damage);
 }

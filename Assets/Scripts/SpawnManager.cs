@@ -13,8 +13,8 @@ public class SpawnManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//gameObject.AddComponent (System.Type.GetType(weaponImplName));
-		InvokeRepeating ("SpawnMele", 0, 1.2f);
-		InvokeRepeating ("SpawnRanged", 0, 1.3f);
+		InvokeRepeating ("SpawnMele", 0, 0.2f);
+		InvokeRepeating ("SpawnRanged", 0, 0.3f);
 	}
 
 	void SpawnRanged() 

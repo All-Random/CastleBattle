@@ -29,20 +29,28 @@ public class Health : MonoBehaviour {
 	
 	public void ApplyDamage(float amount)
 	{	
-		ModifyHealth (amount * -1);
+		amount *= -1;
+		while (amount != 0) {
+			if (alive) {
+				ModifyHealth (ref amount);
+			} else {
+				break;
+			}
+		}
 	}
 	
 	public void ApplyHeal(float amount)
 	{
-		ModifyHealth (amount);
+		if (alive) {
+			ModifyHealth (ref amount);
+		}
 	}
 
-	private void ModifyHealth(float amount)
+	private void ModifyHealth(ref float amount)
 	{
-		if (alive) {
-			unitsActualHealthPoints[0] = Mathf.Max(Mathf.Min( (float)unitsActualHealthPoints[0] + amount, maxHealthPoints),0);
-			CheckIfAlive ();
-		}
+		unitsActualHealthPoints [0] = Mathf.Min ((float)unitsActualHealthPoints [0] + amount, maxHealthPoints);
+		amount = ((float)unitsActualHealthPoints [0]) < 0 ? (float)unitsActualHealthPoints [0] : 0;
+		CheckIfAlive ();
 	}
 
 	public bool IsAlive()

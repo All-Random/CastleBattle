@@ -64,6 +64,16 @@ public class RayCastWeapon : MonoBehaviour, Weapon
 	{
 		this.range = range;
 	}
+
+	public float GetDamage ()
+	{
+		return damage;
+	}
+
+	public void SetDamage (float damage)
+	{
+		this.damage = damage;
+	}
 }
 
 

@@ -10,7 +10,7 @@ public class UnitManager : MonoBehaviour {
 
 	private GameObject currentTarget;
 
-	public int unitCount { get; private set;}
+	public int unitCount;
 
 	private float unionRange = 0.5f;
 	private bool alreadyJoined = false;
@@ -90,12 +90,13 @@ public class UnitManager : MonoBehaviour {
 		
 	public void Join(GameObject unit) {
 		UnitManager unitManager = unit.GetComponent<UnitManager> ();
+		weapon.SetDamage(weapon.GetDamage() + unitManager.weapon.GetDamage ());
 		health.maxHealthPoints = unitManager.health.maxHealthPoints;
 		ArrayList unitsActualHealthPoints = (ArrayList)unitManager.health.unitsActualHealthPoints.Clone();
 		foreach (float unitActualHealthPoints in unitsActualHealthPoints) {
 			health.RegisterUnitActualHealth (unitActualHealthPoints);
 		}
-		Debug.Log ("Unit toggether: " + health.unitsActualHealthPoints.Count);
+		unitCount = health.unitsActualHealthPoints.Count;
 	}
 
 	public void SetTeamDirection(int teamDirection) {
