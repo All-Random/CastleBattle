@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface Weapon
+namespace Scripts.Weapon
 {
-	bool Fire(GameObject target);
-	ArrayList GetTargetsInRange();
-	float GetRange ();
-	void SetRange(float range);
-	float GetDamage ();
-	void SetDamage(float damage);
+	public interface Weapon
+	{
+		bool Fire (GameObject target);
+
+		ArrayList GetTargetsInRange ();
+
+		float GetRange ();
+
+		void SetRange (float range);
+
+		float GetDamage ();
+
+		void SetDamage (float damage);
+	}
 }

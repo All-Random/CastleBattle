@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using CastleBattle.Armory;
 
 public class SpawnManager : MonoBehaviour {
 
@@ -15,6 +16,13 @@ public class SpawnManager : MonoBehaviour {
 		//gameObject.AddComponent (System.Type.GetType(weaponImplName));
 		InvokeRepeating ("SpawnMele", 0, 0.2f);
 		InvokeRepeating ("SpawnRanged", 0, 0.3f);
+		Weapon a = new Weapon (0, "Sword", 0, 0);
+		Debug.Log (a.Name, this);
+		print (Application.persistentDataPath);
+		WeaponRepositoryImp weaponRepo = new WeaponRepositoryImp ();
+		weaponRepo.Save (a);
+		Weapon b = weaponRepo.Load (0);
+		Debug.Log (b.Name);
 	}
 
 	void SpawnRanged() 
