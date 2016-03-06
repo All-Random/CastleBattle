@@ -4,41 +4,70 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.IO;
 using CastleBattle.Armory;
+using System.Collections.Generic;
 
 namespace CastleBattle.Armory
 {
-	public class WeaponRepositoryImp : WeaponRepository
+	public class WeaponRepositoryImp : MonoBehaviour, WeaponRepository
 	{
-		public void Save (Weapon weapon)
-		{ 
-			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/weapon.dat", FileMode.OpenOrCreate);
-			bf.Serialize (file, new WeaponData(weapon));
-			file.Close ();
+		private IDictionary<string, Weapon> weapons;
+
+		public WeaponRepositoryImp ()
+		{
+			weapons = new SortedList<string, Weapon> ();
 		}
 
-		public Weapon Load (int id)
+		public void Save (Weapon weapon)
 		{
-			if (File.Exists (Application.persistentDataPath + "/weapon.dat")) {
-				BinaryFormatter bf = new BinaryFormatter ();
-				FileStream file = File.Open (Application.persistentDataPath + "/weapon.dat", FileMode.Open);
-				Weapon weapon = ((WeaponData)bf.Deserialize (file)).Weapon();
-				file.Close ();
+			weapons.Add (weapon.Id, weapon);
+		}
+
+		public Weapon Load (string id)
+		{
+			Weapon weapon;
+			if (weapons.TryGetValue (id, out weapon)) {
 				return weapon;
 			}
-			throw new System.NotImplementedException ();
+			throw new NotFoundWeaponException (id);
 		}
 
-		public void Remove (int id)
+		public void Remove (string id)
 		{
-			throw new System.NotImplementedException ();
-		}			
+			weapons.Remove (id);
+		}
+
+		void Start()
+		{
+			Debug.Log("Application Starting after " + Time.time + " seconds");
+			if (File.Exists (Application.persistentDataPath + "/weapons.dat")) {
+				BinaryFormatter bf = new BinaryFormatter ();
+				FileStream file = File.Open (Application.persistentDataPath + "/weapons.dat", FileMode.Open);
+				WeaponStore weaponStore = (WeaponStore)bf.Deserialize (file);
+				file.Close ();
+				foreach (WeaponData weapon in weaponStore.WeaponList) {
+					Save (weapon.Weapon());
+				}
+			}
+		}
+
+		void OnApplicationQuit()
+		{
+			Debug.Log("Application ending after " + Time.time + " seconds");
+			WeaponStore weaponStore = new WeaponStore ();
+			foreach (KeyValuePair<string, Weapon> weaponWrapper in weapons) {
+				weaponStore.AddWeapon (new WeaponData(weaponWrapper.Value));
+			}
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file = File.Open (Application.persistentDataPath + "/weapons.dat", FileMode.OpenOrCreate);
+			bf.Serialize (file, weaponStore);
+			file.Close ();
+		}
 	}
 
 	[Serializable]
-	class WeaponData
+	internal class WeaponData
 	{
-		public int id;
+		public string id;
 		public string name;
 		public float damage;
 		public float coldDown;
@@ -54,6 +83,28 @@ namespace CastleBattle.Armory
 		public Weapon Weapon()
 		{
 			return new Weapon (id, name, damage, coldDown);
+		}
+	}
+
+	[Serializable]
+	internal class WeaponStore
+	{
+		private ArrayList weaponList;
+
+		public WeaponStore ()
+		{
+			weaponList = new ArrayList();
+		}
+
+		public void AddWeapon(WeaponData weaponData)
+		{
+			weaponList.Add (weaponData);
+		}
+
+		public ArrayList WeaponList {
+			get {
+				return this.weaponList;
+			}
 		}
 	}
 }

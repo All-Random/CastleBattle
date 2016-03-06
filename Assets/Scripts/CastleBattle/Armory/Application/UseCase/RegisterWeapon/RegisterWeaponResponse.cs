@@ -2,14 +2,14 @@
 {
 	public class RegisterWeaponResponse
 	{
-		private int weaponId;
+		private string weaponId;
 
-		public RegisterWeaponResponse (int weaponId)
+		public RegisterWeaponResponse (string weaponId)
 		{
 			this.weaponId = weaponId;
 		}
 
-		public int WeaponId {
+		public string WeaponId {
 			get {
 				return this.weaponId;
 			}

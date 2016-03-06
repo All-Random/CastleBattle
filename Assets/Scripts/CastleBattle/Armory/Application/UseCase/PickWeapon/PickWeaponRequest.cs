@@ -2,14 +2,14 @@
 {
 	public class PickWeaponRequest
 	{
-		private int weaponId;
+		private string weaponId;
 
-		public PickWeaponRequest (int weaponId)
+		public PickWeaponRequest (string weaponId)
 		{
 			this.weaponId = weaponId;
 		}
 
-		public int WeaponId {
+		public string WeaponId {
 			get {
 				return this.weaponId;
 			}

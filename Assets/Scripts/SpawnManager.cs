@@ -11,18 +11,18 @@ public class SpawnManager : MonoBehaviour {
 
 	public TeamDirection teamDirection;
 
+	private WeaponRepository weaponRepository;
+
 	// Use this for initialization
 	void Start () {
 		//gameObject.AddComponent (System.Type.GetType(weaponImplName));
 		InvokeRepeating ("SpawnMele", 0, 0.2f);
 		InvokeRepeating ("SpawnRanged", 0, 0.3f);
-		Weapon a = new Weapon (0, "Sword", 0, 0);
+		/*Weapon a = new Weapon ("1", "Bow", 0, 0);
 		Debug.Log (a.Name, this);
-		print (Application.persistentDataPath);
-		WeaponRepositoryImp weaponRepo = new WeaponRepositoryImp ();
-		weaponRepo.Save (a);
-		Weapon b = weaponRepo.Load (0);
-		Debug.Log (b.Name);
+		print (Application.persistentDataPath);*/
+		weaponRepository = gameObject.AddComponent<WeaponRepositoryImp>();
+		//weaponRepository.Save (a);
 	}
 
 	void SpawnRanged() 
@@ -46,6 +46,15 @@ public class SpawnManager : MonoBehaviour {
 
 	void TeamColored(GameObject unit) {
 		if(teamDirection == TeamDirection.Left) unit.GetComponent<SpriteRenderer> ().color = Color.red;
+	}
+
+	void Update ()
+	{
+		
+		/*Weapon b = weaponRepository.Load ("0");
+		Debug.Log (b.Name);*/
+		Weapon c = weaponRepository.Load ("1");
+		Debug.Log (c.Name);
 	}
 }
 

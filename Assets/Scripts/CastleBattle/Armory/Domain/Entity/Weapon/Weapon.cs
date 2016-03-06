@@ -4,12 +4,12 @@ namespace CastleBattle.Armory
 {
 	public class Weapon
 	{
-		private int id;
+		private string id;
 		private string name;
 		private float damage;
 		private float coldDown;
 
-		public Weapon (int id, string name, float damage, float coldDown)
+		public Weapon (string id, string name, float damage, float coldDown)
 		{
 			this.Id = id;
 			this.Name = name;
@@ -17,13 +17,13 @@ namespace CastleBattle.Armory
 			this.ColdDown = coldDown;
 		}
 
-		public int Id {
+		public string Id {
 			get {
 				return this.id;
 			}
 			private set {
-				if (value < 0) {
-					throw new InvalidWeaponException ("The weapon should be positive");
+				if (string.IsNullOrEmpty (value)) {
+					throw new InvalidWeaponException ("The id name can't be null or empty");
 				}
 				id = value;
 			}

@@ -2,12 +2,12 @@
 {
 	public class RegisterWeaponRequest
 	{
-		private int id;
+		private string id;
 		private string name;
 		private float damage;
 		private float coldDown;
 
-		public RegisterWeaponRequest (int id, string name, float damage, float coldDown)
+		public RegisterWeaponRequest (string id, string name, float damage, float coldDown)
 		{
 			this.id = id;
 			this.name = name;
@@ -15,7 +15,7 @@
 			this.coldDown = coldDown;
 		}
 
-		public int Id {
+		public string Id {
 			get {
 				return this.id;
 			}
