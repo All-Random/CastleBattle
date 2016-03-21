@@ -3,7 +3,6 @@ using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using System.IO;
-using CastleBattle.Armory;
 using System.Collections.Generic;
 
 namespace CastleBattle.Armory

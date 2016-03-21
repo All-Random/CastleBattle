@@ -2,19 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using Scripts.Weapon;
+using UnityEngine.UI;
 
 
 public class UnitManager : MonoBehaviour {
 
 	public Weapon weapon { get; private set;}
 	public Health health { get; private set;}
+	public float unionRange = 0.5f;
 	private Move move;
 
 	private GameObject currentTarget;
+	[SerializeField]
+	private int unitCount = 1;
 
-	public int unitCount;
-
-	private float unionRange = 0.5f;
 	private bool alreadyJoined = false;
 	private int teamDirection;
 
@@ -41,6 +42,8 @@ public class UnitManager : MonoBehaviour {
 				move.DoMove (deltaTime);
 			} 
 		}
+
+		this.UpdateUnitCount ();
 	}
 
 	void LateUpdate()
@@ -48,6 +51,10 @@ public class UnitManager : MonoBehaviour {
 		if (!health.IsAlive () || alreadyJoined) {
 			Destroy (gameObject);
 		}
+	}
+
+	private void UpdateUnitCount() {
+		gameObject.GetComponentInChildren<Text> () .text = unitCount.ToString();
 	}
 
 	private bool SelectTarget () {
@@ -68,6 +75,7 @@ public class UnitManager : MonoBehaviour {
 	{
 		if (null != health) {
 			health.ApplyDamage (amount);
+			unitCount = health.unitsActualHealthPoints.Count;
 		} else {
 			Debug.LogError ("No health script, can't apply damage");
 		}
@@ -81,7 +89,10 @@ public class UnitManager : MonoBehaviour {
 				continue;
 
 			if (transform.tag == collision.transform.tag && transform.name == collision.transform.name) {// if the player is of the same team ignore it
-				collision.gameObject.GetComponent<UnitManager> ().Join (gameObject);
+				UnitManager unitManager = collision.gameObject.GetComponent<UnitManager> ();
+				if (unitManager.alreadyJoined)
+					continue;
+				unitManager.Join (gameObject);
 				alreadyJoined = true;
 				break;
 			}

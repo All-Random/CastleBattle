@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
 
 namespace CastleBattle.Armory
 {
-	public class InvalidWeaponException : UnityException
+	public class InvalidWeaponException : Exception
 	{
 		public InvalidWeaponException (string message) : base (message)
 		{

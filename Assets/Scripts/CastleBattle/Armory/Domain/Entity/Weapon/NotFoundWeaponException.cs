@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
 
 namespace CastleBattle.Armory
 {
-	public class NotFoundWeaponException : UnityException
+	public class NotFoundWeaponException : Exception
 	{
 		public NotFoundWeaponException (string id) : base (BuildMessage(id))
 		{

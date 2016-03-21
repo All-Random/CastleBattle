@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace CastleBattle.Armory
+﻿namespace CastleBattle.Armory
 {
 	public class Weapon
 	{
