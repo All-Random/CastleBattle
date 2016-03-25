@@ -185,6 +185,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11475146, guid: 8642ead0ad31ca140a65121f92fa31c2, type: 2}
+      propertyPath: teamDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8642ead0ad31ca140a65121f92fa31c2, type: 2}
   m_IsPrefabParent: 0
@@ -230,6 +234,10 @@ Prefab:
     - target: {fileID: 106422, guid: 8642ead0ad31ca140a65121f92fa31c2, type: 2}
       propertyPath: m_Name
       value: Spawn (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 106422, guid: 8642ead0ad31ca140a65121f92fa31c2, type: 2}
+      propertyPath: m_TagString
+      value: Team 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8642ead0ad31ca140a65121f92fa31c2, type: 2}
