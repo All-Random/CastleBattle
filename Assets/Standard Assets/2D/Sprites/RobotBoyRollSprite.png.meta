@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: fc67a9002ed4034419f91d0d85bd6b24
+timeCreated: 1459119080
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: RobotBoyRoll00
@@ -26,6 +28,30 @@ TextureImporter:
     21300042: RobotBoyRoll21
     21300044: RobotBoyRoll22
     21300046: RobotBoyRoll23
+    21300048: RobotBoyRollSprite0
+    21300050: RobotBoyRollSprite_1
+    21300052: RobotBoyRollSprite_2
+    21300054: RobotBoyRollSprite_3
+    21300056: RobotBoyRollSprite_4
+    21300058: RobotBoyRollSprite_5
+    21300060: RobotBoyRollSprite_6
+    21300062: RobotBoyRollSprite_7
+    21300064: RobotBoyRollSprite_8
+    21300066: RobotBoyRollSprite_9
+    21300068: RobotBoyRollSprite_10
+    21300070: RobotBoyRollSprite_11
+    21300072: RobotBoyRollSprite_12
+    21300074: RobotBoyRollSprite_13
+    21300076: RobotBoyRollSprite_14
+    21300078: RobotBoyRollSprite_15
+    21300080: RobotBoyRollSprite_16
+    21300082: RobotBoyRollSprite_17
+    21300084: RobotBoyRollSprite_18
+    21300086: RobotBoyRollSprite_19
+    21300088: RobotBoyRollSprite_20
+    21300090: RobotBoyRollSprite_21
+    21300092: RobotBoyRollSprite_22
+    21300094: RobotBoyRollSprite_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -39,7 +65,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -59,11 +85,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 200
   alphaIsTransparency: 1
@@ -73,260 +100,510 @@ TextureImporter:
     maxTextureSize: 1024
     textureFormat: -2
     compressionQuality: 100
+    allowsAlphaSplitting: 0
   - buildTarget: Android
     maxTextureSize: 1024
     textureFormat: -1
     compressionQuality: 50
+    allowsAlphaSplitting: 0
   - buildTarget: BlackBerry
     maxTextureSize: 1024
     textureFormat: -1
     compressionQuality: 50
+    allowsAlphaSplitting: 0
   - buildTarget: WP8
     maxTextureSize: 1024
     textureFormat: -1
     compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
     sprites:
-    - name: RobotBoyRoll00
+    - name: RobotBoyRollSprite0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1773
-        width: 275
-        height: 275
+        x: 61
+        y: 1781
+        width: 164
+        height: 204
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll01
+      outline:
+      - - {x: 20, y: -51}
+        - {x: 42, y: -9}
+        - {x: 42, y: 41}
+        - {x: 38, y: 52}
+        - {x: 0, y: 52}
+        - {x: -8, y: 41}
+        - {x: -41, y: -25}
+        - {x: -41, y: -51}
+        - {x: -29, y: -51}
+        - {x: -13, y: -40}
+        - {x: -10, y: -38}
+        - {x: -6, y: -51}
+    - name: RobotBoyRollSprite_1
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1773
-        width: 275
-        height: 275
+        x: 327
+        y: 1781
+        width: 180
+        height: 204
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll02
+      outline:
+      - - {x: 46, y: 52}
+        - {x: 8, y: 52}
+        - {x: -28, y: -8}
+        - {x: -26, y: -13}
+        - {x: -25, y: -16}
+        - {x: -19, y: -21}
+        - {x: -30, y: -11}
+        - {x: -33, y: -10}
+        - {x: -45, y: -25}
+        - {x: -45, y: -42}
+        - {x: -3, y: -51}
+        - {x: 18, y: -51}
+        - {x: 18, y: -44}
+        - {x: 46, y: 2}
+    - name: RobotBoyRollSprite_2
       rect:
         serializedVersion: 2
-        x: 550
-        y: 1773
-        width: 275
-        height: 275
+        x: 607
+        y: 1783
+        width: 185
+        height: 178
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll03
+      outline:
+      - - {x: 2, y: 45.5}
+        - {x: -28, y: 20.5}
+        - {x: -46, y: -11.5}
+        - {x: -46, y: -43.5}
+        - {x: -45, y: -44.5}
+        - {x: 10, y: -44.5}
+        - {x: 47, y: -5.5}
+        - {x: 47, y: 42.5}
+        - {x: 41, y: 45.5}
+    - name: RobotBoyRollSprite_3
       rect:
         serializedVersion: 2
-        x: 825
-        y: 1773
-        width: 275
-        height: 275
+        x: 911
+        y: 1783
+        width: 146
+        height: 134
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll04
+      outline:
+      - - {x: 23.5, y: 34.5}
+        - {x: -21.5, y: 34.5}
+        - {x: -35.5, y: 1.5}
+        - {x: -36.5, y: -3.5}
+        - {x: -36.5, y: -33.5}
+        - {x: 4.5, y: -33.5}
+        - {x: 35.5, y: -4.5}
+        - {x: 37.5, y: 1.5}
+        - {x: 37.5, y: 26.5}
+    - name: RobotBoyRollSprite_4
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1773
-        width: 275
-        height: 275
+        x: 1194
+        y: 1789
+        width: 119
+        height: 112
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll05
+      outline:
+      - - {x: 20, y: 24}
+        - {x: 3, y: 29}
+        - {x: -19, y: 29}
+        - {x: -30, y: 19}
+        - {x: -30, y: -11}
+        - {x: -24, y: -28}
+        - {x: 23, y: -28}
+        - {x: 30, y: -14}
+        - {x: 30, y: 5}
+        - {x: 28, y: 9}
+    - name: RobotBoyRollSprite_5
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 1773
-        width: 275
-        height: 275
+        x: 1469
+        y: 1784
+        width: 110
+        height: 121
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll06
+      outline:
+      - - {x: -14.5, y: 30.5}
+        - {x: -22.5, y: 26.5}
+        - {x: -27.5, y: 11.5}
+        - {x: -27.5, y: -20.5}
+        - {x: -24.5, y: -27.5}
+        - {x: -13.5, y: -30.5}
+        - {x: 16.5, y: -30.5}
+        - {x: 28.5, y: -15.5}
+        - {x: 28.5, y: 17.5}
+        - {x: 12.5, y: 30.5}
+    - name: RobotBoyRollSprite_6
       rect:
         serializedVersion: 2
-        x: 1650
-        y: 1773
-        width: 275
-        height: 275
+        x: 1739
+        y: 1787
+        width: 122
+        height: 114
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll07
+      outline:
+      - - {x: 17.5, y: 29.5}
+        - {x: -20.5, y: 29.5}
+        - {x: -25.5, y: 28.5}
+        - {x: -30.5, y: 11.5}
+        - {x: -30.5, y: -22.5}
+        - {x: -20.5, y: -28.5}
+        - {x: 14.5, y: -28.5}
+        - {x: 31.5, y: -13.5}
+        - {x: 31.5, y: 10.5}
+        - {x: 28.5, y: 20.5}
+    - name: RobotBoyRollSprite_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1498
-        width: 275
-        height: 275
+        x: 87
+        y: 1512
+        width: 123
+        height: 119
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll08
+      outline:
+      - - {x: 29.5, y: 18}
+        - {x: 10.5, y: 30}
+        - {x: -8.5, y: 30}
+        - {x: -25.5, y: 21}
+        - {x: -30.5, y: 15}
+        - {x: -30.5, y: -25}
+        - {x: -24.5, y: -30}
+        - {x: 27.5, y: -30}
+        - {x: 31.5, y: -22}
+        - {x: 31.5, y: 12}
+    - name: RobotBoyRollSprite_8
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1498
-        width: 275
-        height: 275
+        x: 368
+        y: 1512
+        width: 113
+        height: 109
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll09
+      outline:
+      - - {x: -26.5, y: 27.5}
+        - {x: -28.5, y: 24.5}
+        - {x: -28.5, y: -16.5}
+        - {x: -11.5, y: -27.5}
+        - {x: 19.5, y: -27.5}
+        - {x: 28.5, y: -20.5}
+        - {x: 28.5, y: 27.5}
+    - name: RobotBoyRollSprite_9
       rect:
         serializedVersion: 2
-        x: 550
-        y: 1498
-        width: 275
-        height: 275
+        x: 635
+        y: 1504
+        width: 122
+        height: 122
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll10
+      outline:
+      - - {x: -26.5, y: 30.5}
+        - {x: -30.5, y: 20.5}
+        - {x: -30.5, y: -23.5}
+        - {x: -16.5, y: -30.5}
+        - {x: 8.5, y: -30.5}
+        - {x: 13.5, y: -29.5}
+        - {x: 31.5, y: -20.5}
+        - {x: 31.5, y: 22.5}
+        - {x: 29.5, y: 30.5}
+    - name: RobotBoyRollSprite_10
       rect:
         serializedVersion: 2
-        x: 825
-        y: 1498
-        width: 275
-        height: 275
+        x: 917
+        y: 1511
+        width: 123
+        height: 116
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll11
+      outline:
+      - - {x: -18.5, y: 30}
+        - {x: -30.5, y: 16}
+        - {x: -30.5, y: -28}
+        - {x: 19.5, y: -28}
+        - {x: 31.5, y: -23}
+        - {x: 31.5, y: 10}
+        - {x: 14.5, y: 30}
+    - name: RobotBoyRollSprite_11
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1498
-        width: 275
-        height: 275
+        x: 1188
+        y: 1515
+        width: 117
+        height: 106
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll12
+      outline:
+      - - {x: -22.5, y: 27.5}
+        - {x: -29.5, y: 24.5}
+        - {x: -29.5, y: -20.5}
+        - {x: -17.5, y: -26.5}
+        - {x: 25.5, y: -26.5}
+        - {x: 29.5, y: -23.5}
+        - {x: 29.5, y: 27.5}
+    - name: RobotBoyRollSprite_12
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 1498
-        width: 275
-        height: 275
+        x: 1471
+        y: 1512
+        width: 118
+        height: 113
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll13
+      outline:
+      - - {x: -19.5, y: 28.5}
+        - {x: -29.5, y: 20.5}
+        - {x: -29.5, y: -27.5}
+        - {x: -24.5, y: -28.5}
+        - {x: 15.5, y: -28.5}
+        - {x: 30.5, y: -20.5}
+        - {x: 30.5, y: 25.5}
+        - {x: 20.5, y: 28.5}
+    - name: RobotBoyRollSprite_13
       rect:
         serializedVersion: 2
-        x: 1644
-        y: 1500
-        width: 275
-        height: 275
+        x: 1744
+        y: 1512
+        width: 120
+        height: 112
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll14
+      outline:
+      - - {x: -30, y: 28}
+        - {x: -30, y: -23}
+        - {x: -24, y: -28}
+        - {x: 26, y: -28}
+        - {x: 30, y: -22}
+        - {x: 30, y: 5}
+        - {x: 21, y: 28}
+    - name: RobotBoyRollSprite_14
       rect:
         serializedVersion: 2
-        x: 0
+        x: 87
+        y: 1235
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 30.5}
+        - {x: -29.5, y: 17.5}
+        - {x: -29.5, y: -21.5}
+        - {x: -25.5, y: -29.5}
+        - {x: 26.5, y: -29.5}
+        - {x: 30.5, y: -17.5}
+        - {x: 30.5, y: 23.5}
+        - {x: 13.5, y: 30.5}
+    - name: RobotBoyRollSprite_15
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1237
+        width: 121
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 30}
+        - {x: -30.5, y: -27}
+        - {x: -28.5, y: -29}
+        - {x: 12.5, y: -29}
+        - {x: 30.5, y: -21}
+        - {x: 30.5, y: 17}
+        - {x: 24.5, y: 30}
+    - name: RobotBoyRollSprite_16
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1237
+        width: 118
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 30}
+        - {x: -29.5, y: -15}
+        - {x: -27.5, y: -29}
+        - {x: 30.5, y: -29}
+        - {x: 30.5, y: 30}
+    - name: RobotBoyRollSprite_17
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1235
+        width: 168
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: 30.5}
+        - {x: -42, y: -7.5}
+        - {x: -24, y: -29.5}
+        - {x: 20, y: -29.5}
+        - {x: 42, y: -5.5}
+        - {x: 42, y: 18.5}
+        - {x: 28, y: 30.5}
+    - name: RobotBoyRollSprite_18
+      rect:
+        serializedVersion: 2
+        x: 1152
         y: 1223
-        width: 275
-        height: 275
+        width: 203
+        height: 129
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll15
+      outline:
+      - - {x: 1, y: 33}
+        - {x: -35, y: 33}
+        - {x: -51, y: 23}
+        - {x: -51, y: -7}
+        - {x: -20, y: -32}
+        - {x: 19, y: -32}
+        - {x: 51, y: -10}
+        - {x: 51, y: 9}
+        - {x: 42, y: 15}
+    - name: RobotBoyRollSprite_19
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1223
-        width: 275
-        height: 275
+        x: 1423
+        y: 1227
+        width: 216
+        height: 135
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll16
+      outline:
+      - - {x: -5, y: 34.5}
+        - {x: -50, y: 34.5}
+        - {x: -54, y: 28.5}
+        - {x: -54, y: -4.5}
+        - {x: -27, y: -33.5}
+        - {x: 47, y: -33.5}
+        - {x: 55, y: -25.5}
+        - {x: 55, y: -6.5}
+        - {x: 48, y: 7.5}
+    - name: RobotBoyRollSprite_20
       rect:
         serializedVersion: 2
-        x: 550
-        y: 1223
-        width: 275
-        height: 275
+        x: 1720
+        y: 1235
+        width: 187
+        height: 176
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll17
+      outline:
+      - - {x: -32, y: 45}
+        - {x: -42, y: 41}
+        - {x: -47, y: 33}
+        - {x: -47, y: 3}
+        - {x: -27, y: -31}
+        - {x: -11, y: -44}
+        - {x: 21, y: -44}
+        - {x: 38, y: -40}
+        - {x: 47, y: -26}
+        - {x: 47, y: -5}
+        - {x: -2, y: 45}
+    - name: RobotBoyRollSprite_21
       rect:
         serializedVersion: 2
-        x: 825
-        y: 1223
-        width: 275
-        height: 275
+        x: 104
+        y: 965
+        width: 137
+        height: 195
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll18
+      outline:
+      - - {x: 26.5, y: 20.5}
+        - {x: 10.5, y: 49.5}
+        - {x: -29.5, y: 49.5}
+        - {x: -34.5, y: 40.5}
+        - {x: -34.5, y: -48.5}
+        - {x: 29.5, y: -48.5}
+        - {x: 34.5, y: -47.5}
+        - {x: 34.5, y: -31.5}
+        - {x: 29.5, y: -31.5}
+    - name: RobotBoyRollSprite_22
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1223
-        width: 275
-        height: 275
+        x: 344
+        y: 959
+        width: 151
+        height: 204
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll19
+      outline:
+      - - {x: 33, y: 52}
+        - {x: -12, y: 52}
+        - {x: -15, y: 51}
+        - {x: -30, y: -14}
+        - {x: -23, y: -22}
+        - {x: -18, y: -26}
+        - {x: -20, y: -25}
+        - {x: -26, y: -23}
+        - {x: -36, y: -34}
+        - {x: -38, y: -43}
+        - {x: -38, y: -47}
+        - {x: -36, y: -49}
+        - {x: -30, y: -49}
+        - {x: -12, y: -51}
+        - {x: 29, y: -51}
+        - {x: 34, y: -41}
+        - {x: 38, y: -26}
+        - {x: 38, y: 42}
+    - name: RobotBoyRollSprite_23
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 1223
-        width: 275
-        height: 275
+        x: 611
+        y: 957
+        width: 162
+        height: 202
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll20
-      rect:
-        serializedVersion: 2
-        x: 1650
-        y: 1223
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll21
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 948
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll22
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 948
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RobotBoyRoll23
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 948
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32.5, y: 51.5}
+        - {x: -1.5, y: 51.5}
+        - {x: -40.5, y: -26.5}
+        - {x: -40.5, y: -50.5}
+        - {x: 21.5, y: -50.5}
+        - {x: 29.5, y: -47.5}
+        - {x: 41.5, y: -27.5}
+        - {x: 41.5, y: 47.5}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
+  assetBundleVariant: 

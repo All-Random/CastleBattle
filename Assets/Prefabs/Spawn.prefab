@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 2, z: 0}
+  m_LocalPosition: {x: -4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22422760}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ranged: {fileID: 107772, guid: 27e182d36733f5244ac4f8e28a511603, type: 2}
   mele: {fileID: 184112, guid: 55b378b4f918064479dd0cfd206281a0, type: 2}
-  teamDirection: -1
+  teamDirection: 1
 --- !u!114 &11478214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,7 +467,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.5}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22426288

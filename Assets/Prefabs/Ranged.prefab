@@ -148,6 +148,7 @@ MonoBehaviour:
   damage: 3
   range: 3
   timeBetweenHits: 2
+  FireAnimation: {fileID: 186798, guid: 1399a9dc89f2c514fb302cd441a3ef39, type: 2}
 --- !u!114 &11445970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,6 +359,14 @@ Prefab:
       propertyPath: unionRange
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: FireAnnimation
+      value: 
+      objectReference: {fileID: 186798, guid: 1399a9dc89f2c514fb302cd441a3ef39, type: 2}
+    - target: {fileID: 0}
+      propertyPath: FireAnimation
+      value: 
+      objectReference: {fileID: 186798, guid: 1399a9dc89f2c514fb302cd441a3ef39, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107772}

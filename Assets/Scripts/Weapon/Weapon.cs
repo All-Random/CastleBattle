@@ -16,5 +16,7 @@ namespace Scripts.Weapon
 		float GetDamage ();
 
 		void SetDamage (float damage);
+
+		void CallFireAnimation ();
 	}
 }

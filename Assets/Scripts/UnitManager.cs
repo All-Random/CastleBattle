@@ -89,10 +89,10 @@ public class UnitManager : MonoBehaviour {
 				continue;
 
 			if (transform.tag == collision.transform.tag && transform.name == collision.transform.name) {// if the player is of the same team ignore it
-				UnitManager unitManager = collision.gameObject.GetComponent<UnitManager> ();
-				if (unitManager.alreadyJoined)
+				UnitManager joinTargetUManager = collision.gameObject.GetComponent<UnitManager> ();
+				if (joinTargetUManager.alreadyJoined)
 					continue;
-				unitManager.Join (gameObject);
+				joinTargetUManager.Join (gameObject);
 				alreadyJoined = true;
 				break;
 			}

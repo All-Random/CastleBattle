@@ -9,13 +9,15 @@ namespace Scripts.Weapon
 		public float range = 0;
 		public float timeBetweenHits = 0;
 
+		public GameObject FireAnimation;
+
 		protected GameObject currentTarget = null;
 		protected ArrayList targets = new ArrayList ();
 
 		public bool Fire (GameObject target)
 		{
 			currentTarget = target;
-			InvokeRepeating ("DoDamage", 0, timeBetweenHits);
+			InvokeRepeating ("DoDamage", timeBetweenHits, timeBetweenHits);
 			return true;
 		}
 
@@ -28,6 +30,7 @@ namespace Scripts.Weapon
 
 			if (currentTarget.GetComponent<UnitManager> () != null) {	// if the hit object has the UnitManager script on it, call to deal damage
 				currentTarget.GetComponent<UnitManager> ().ApplyDamage (damage);
+				CallFireAnimation ();
 			}
 		}
 
@@ -75,6 +78,15 @@ namespace Scripts.Weapon
 		public void SetDamage (float damage)
 		{
 			this.damage = damage;
+		}
+
+		public void CallFireAnimation()
+		{
+			if (FireAnimation != null) {
+				GameObject FireAnimationInst = Instantiate (FireAnimation);
+				FireAnimationInst.transform.position = transform.position;
+				FireAnimationInst.GetComponent<BulletAnimationMovement>().target = currentTarget;
+			}
 		}
 	}
 }
