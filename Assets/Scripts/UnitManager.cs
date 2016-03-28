@@ -43,7 +43,7 @@ public class UnitManager : MonoBehaviour {
 			} 
 		}
 
-		this.UpdateUnitCount ();
+		this.UpdateUnitCountText ();
 	}
 
 	void LateUpdate()
@@ -53,7 +53,7 @@ public class UnitManager : MonoBehaviour {
 		}
 	}
 
-	private void UpdateUnitCount() {
+	private void UpdateUnitCountText() {
 		gameObject.GetComponentInChildren<Text> () .text = unitCount.ToString();
 	}
 
@@ -75,7 +75,7 @@ public class UnitManager : MonoBehaviour {
 	{
 		if (null != health) {
 			health.ApplyDamage (amount);
-			unitCount = health.unitsActualHealthPoints.Count;
+			UpdateUnitCount ();
 		} else {
 			Debug.LogError ("No health script, can't apply damage");
 		}
@@ -109,7 +109,16 @@ public class UnitManager : MonoBehaviour {
 		foreach (float unitActualHealthPoints in unitsActualHealthPoints) {
 			health.RegisterUnitActualHealth (unitActualHealthPoints);
 		}
-		unitCount = health.unitsActualHealthPoints.Count;
+		UpdateUnitCount ();
+	}
+
+	private void UpdateUnitCount() {
+		int tempUnitCount = health.unitsActualHealthPoints.Count;
+		if (unitCount - tempUnitCount > 0) {
+			float damageDifference = weapon.GetDamage () * ((float)(unitCount - tempUnitCount) / unitCount);
+			weapon.SetDamage (weapon.GetDamage() - damageDifference);
+		}
+		unitCount = tempUnitCount;
 	}
 
 	public void SetTeamDirection(int teamDirection) {
