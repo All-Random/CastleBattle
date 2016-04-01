@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Move : MonoBehaviour {
 
-	public float initialSpeed = 1;
+	public float initialSpeed = 0;
 
 	private float speed;
 
@@ -12,6 +12,6 @@ public class Move : MonoBehaviour {
 	}
 
 	public void DoMove (float deltaTime) {
-		gameObject.transform.parent.Translate (Vector3.right * speed * deltaTime);
+		gameObject.transform.Translate (Vector3.right * speed * deltaTime);
 	}
 }
